@@ -42,15 +42,21 @@ class TopicManager{
     public static function getTopics($mainTopicId){
         $db = self::_connectDb();
         $results = array();
-        $sql = "SELECT id_topic, title_topic FROM topic WHERE id = ?";
+        $sql = "SELECT id_topic, title_topic, datetime_topic, username FROM topic WHERE id = ?";
         $sth = $db->prepare($sql);
         $sth->execute(array($mainTopicId));
         $results = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
 
-    public static function getMessages(){
-
+    public static function getMessages($topicId){
+        $db = self::_connectDb();
+        $results = array();
+        $sql = "SELECT id_message, text, datetime, username FROM message WHERE id_topic = ?";
+        $sth = $db->prepare($sql);
+        $sth->execute(array($topicId));
+        $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     private function _connectDb(){

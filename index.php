@@ -14,6 +14,9 @@ if(isset($_GET["action"])){
     } else if($_GET["action"] == "listTopics"){
         $mainTopicId = $_GET["id"];
         listTopics($mainTopicId);
+    } else if($_GET["action"] == "listMessages"){
+        $topicId = $_GET["id"];
+        listMessages($topicId);
     }
 }else{
     openMainPage();

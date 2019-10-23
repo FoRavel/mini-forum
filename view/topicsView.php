@@ -17,7 +17,10 @@
         </tr>
         <?php foreach ($arrayObjTopics as $topic){?>
         <tr>
-            <td><a href="#"><?= $topic->getTitle() ?></a></td>
+            <td>
+            <a href="index.php?action=listMessages&id=<?=$topic->getId()?>"><?= $topic->getTitle() ?></a>
+            <p>par <?= $topic->getAuthor().", ".$topic->getCreationDatetime() ?></p>
+            </td>
             <td><?= $topic->getCountMessages() ?></td>
         </tr>
         <?php }; ?>
