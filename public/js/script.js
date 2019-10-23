@@ -8,6 +8,9 @@ $(document).ready(function () {
         $("#loginInput").css("display", "initial");
         $("#loginConfirmButton").css("display", "initial");
     });
+    $("#loginContinueButton").click(function () {
+        document.location.reload(true)
+    });
     $("#registerConfirmButton").click(function () {
         var username = $("#loginInput").val();
         if (username == "") {
@@ -38,10 +41,12 @@ $(document).ready(function () {
                 }else if(data == 1){
                     $("#loginInput").css("display", "none");
                     $("#loginConfirmButton").css("display", "none");
+                    $("#loginButton").css("display", "none");
+                    $("#logoffButton").css("display", "initial");
+                    $("#loginContinueButton").css("display", "initial");
                     $("#infoMessage").text("Vous vous êtes connecté avec succès");
                 }
             });
         }
-
     })
 }); 

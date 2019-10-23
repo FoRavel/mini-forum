@@ -65,3 +65,8 @@ function signInUser(User $user){
         echo $bool;
     }
 }
+function signOffUser(){
+    session_destroy();
+    session_unset();
+}
+

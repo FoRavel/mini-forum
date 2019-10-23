@@ -8,6 +8,8 @@
 
 <p id="infoMessage"></p>
 <button id="loginButton">Se connecter</button>
+<button id="loginContinueButton">Continuer</button>
+<button id="logoffButton">Se déconnecter</button>
 <button id="registerButton">S'enregistrer</button>
 <section>
     <table>
