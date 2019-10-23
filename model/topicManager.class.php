@@ -20,7 +20,7 @@ class TopicManager{
         $result = $sth->fetch();
         return $result["cnt"];
     }
-
+    //main topics
     public static function countMessages($topicId){
         $db = self::_connectDb();
         $sql = "SELECT COUNT(id_message) AS cnt FROM message m, topic t WHERE m.id_topic = t.id_topic AND t.id = ?";
@@ -29,9 +29,24 @@ class TopicManager{
         $result = $sth->fetch();
         return $result["cnt"];
     }
+    //topics
+    public static function countMessagesTopics($topicId){
+        $db = self::_connectDb();
+        $sql = "SELECT COUNT(id_message) AS cnt FROM message WHERE id_topic = ?";
+        $sth = $db->prepare($sql);
+        $sth->execute(array($topicId));
+        $result = $sth->fetch();
+        return $result["cnt"];
+    }
 
-    public static function getTopics(){
-
+    public static function getTopics($mainTopicId){
+        $db = self::_connectDb();
+        $results = array();
+        $sql = "SELECT id_topic, title_topic FROM topic WHERE id = ?";
+        $sth = $db->prepare($sql);
+        $sth->execute(array($mainTopicId));
+        $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     public static function getMessages(){

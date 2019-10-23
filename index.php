@@ -11,6 +11,9 @@ if(isset($_GET["action"])){
         $username = $_GET["username"];
         $user = new User($username, "Membre");
         signInUser($user);
+    } else if($_GET["action"] == "listTopics"){
+        $mainTopicId = $_GET["id"];
+        listTopics($mainTopicId);
     }
 }else{
     openMainPage();
