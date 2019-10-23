@@ -4,6 +4,13 @@ spl_autoload_register(function($class){
 });
 function openMainPage(){ 
    $arrayTopics = TopicManager::getMainTopics();
+   $arrayObjTopics = array_map(function($value){
+    $countTopics = TopicManager::countTopics($value["id"]);
+    $title = $value["title"];
+    $description = $value["description"];
+    $topic = new Topic($title, $description, $countTopics);
+    return $topic;
+   }, $arrayTopics);
    require("./view/mainPage.php"); 
 }
 function registerUser(User $user){

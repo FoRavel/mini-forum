@@ -11,8 +11,11 @@
 <button id="registerButton">S'enregistrer</button>
 <section>
     <ul>
-<?php foreach ($arrayTopics as $value){?>
-    <li><?= $value["title"] ?><br><?= $value["description"]?></li>
+<?php foreach ($arrayObjTopics as $topic){?>
+    <li><?= $topic->getTitle() ?>
+    <br><?= $topic->getDescription() ?>
+    <br><?= $topic->getCountTopics() ?>
+    </li>
 <?php }; ?>
     </ul>
 </section>
