@@ -15,6 +15,7 @@
     <li><?= $topic->getTitle() ?>
     <br><?= $topic->getDescription() ?>
     <br><?= $topic->getCountTopics() ?>
+    <br><?= $topic->getCountMessages() ?>
     </li>
 <?php }; ?>
     </ul>
