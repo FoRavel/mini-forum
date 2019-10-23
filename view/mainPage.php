@@ -9,6 +9,13 @@
 <p id="infoMessage"></p>
 <button id="loginButton">Se connecter</button>
 <button id="registerButton">S'enregistrer</button>
+<section>
+    <ul>
+<?php foreach ($arrayTopics as $value){?>
+    <li><?= $value["title"] ?><br><?= $value["description"]?></li>
+<?php }; ?>
+    </ul>
+</section>
 
 <?php $content = ob_get_clean();?>
 

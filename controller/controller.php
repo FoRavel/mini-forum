@@ -3,6 +3,7 @@ spl_autoload_register(function($class){
     require './model/' .lcfirst($class). '.class.php';
 });
 function openMainPage(){ 
+   $arrayTopics = TopicManager::getMainTopics();
    require("./view/mainPage.php"); 
 }
 function registerUser(User $user){
