@@ -4,7 +4,7 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-    <a href="#">Créer Nouveau sujet</a>
+    <a href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Créer Nouveau sujet</a>
     <table>
         <tr>
             <td>Discussions</td>

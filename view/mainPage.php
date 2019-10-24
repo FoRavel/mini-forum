@@ -5,15 +5,15 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-    <table>
+    <table class=".table">
         <tr>
-            <td>Thèmes</td>
-            <td>Discussions</td>
-            <td>Messages</td>
+            <th class="table__header" scope="col">Sujets</th>
+            <th class="table__header" scope="col">Discussions</th>
+            <th class="table__header" scope="col">Messages</th>
         </tr>
         <?php foreach ($arrayObjTopics as $topic){?>
-        <tr>
-            <td><a href="index.php?action=listTopics&id=<?= $topic->getId()?>"><?= $topic->getTitle() ?></a><br><?= $topic->getDescription() ?></td>
+        <tr class="table__row">
+            <td><a id="mainTopicLink" class="table__main-topic-title" href="index.php?action=listTopics&id=<?= $topic->getId()?>"><?= $topic->getTitle() ?></a><p class="table__main-topic-description"><?= $topic->getDescription() ?></p></td>
             <td><?= $topic->getCountTopics() ?></td>
             <td><?= $topic->getCountMessages() ?></td>
         </tr>

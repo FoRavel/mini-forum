@@ -19,6 +19,11 @@ if(isset($_GET["action"])){
         listMessages($topicId);
     } else if($_GET["action"] == "signOff"){
         signOffUser();
+    } else if($_GET["action"] == "createTopic"){
+        $mainTopicId = $_GET["id"];
+        createTopic();
+    } else if($_GET["action"] == "createTopic_trt"){
+        createTopic_trt();
     }
 }else{
     openMainPage();

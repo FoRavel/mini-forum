@@ -73,4 +73,10 @@ function signOffUser(){
     session_destroy();
     require("./view/deconnexionView.php"); 
 }
+function createTopic(){
+    require("./view/createTopicView.php"); 
+}
+function createTopic_trt(){
+
+}
 
