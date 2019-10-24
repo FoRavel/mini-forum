@@ -1,0 +1,44 @@
+body {
+  font-family: "Roboto", sans-serif;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.table__header {
+  color: white;
+  background-color: #004874;
+  font-weight: normal;
+  text-align: left;
+  padding: 0.7em 0.7em;
+}
+
+.table__col {
+  padding: 0.7em 0.7em;
+}
+
+.table__row:nth-child(even) {
+  background: white;
+}
+
+.table__row:nth-child(odd) {
+  background: #fafafa;
+}
+
+.table__main-topic-title {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.table__main-topic-title:hover {
+  color: #4588c5;
+}
+
+.table__main-topic-description {
+  font-size: 0.9em;
+}
+
+#loginInput, #registerConfirmMessage, #registerConfirmButton, #loginContinueButton, #loginConfirmButton {
+  display: none;
+}
+/*# sourceMappingURL=styles.css.map */
