@@ -1,16 +1,9 @@
+<?php session_start();?>
 <?php $title = "MiniForum - Accueil"; ?>
-
 <?php ob_start();?>
-
-<input type="text" id="loginInput"/>
-<button id="registerConfirmButton">Confirmer l'enregistrement</button>
-<button id="loginConfirmButton">Confirmer la connexion</button>
-
-<p id="infoMessage"></p>
-<button id="loginButton">Se connecter</button>
-<button id="loginContinueButton">Continuer</button>
-<button id="logoffButton">Se déconnecter</button>
-<button id="registerButton">S'enregistrer</button>
+<?php include("header.php");?>
+<?php $header = ob_get_clean();?>
+<?php ob_start();?>
 <section>
     <table>
         <tr>

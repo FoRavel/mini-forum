@@ -1,15 +1,10 @@
 <?php $title = "MiniForum - Discussions"; ?>
-
 <?php ob_start();?>
-
-<input type="text" id="loginInput"/>
-<button id="registerConfirmButton">Confirmer l'enregistrement</button>
-<button id="loginConfirmButton">Confirmer la connexion</button>
-
-<p id="infoMessage"></p>
-<button id="loginButton">Se connecter</button>
-<button id="registerButton">S'enregistrer</button>
+<?php include("header.php");?>
+<?php $header = ob_get_clean();?>
+<?php ob_start();?>
 <section>
+    <a href="#">Créer Nouveau sujet</a>
     <table>
         <tr>
             <td>Discussions</td>

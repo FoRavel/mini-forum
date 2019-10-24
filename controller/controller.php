@@ -32,6 +32,7 @@ function listTopics($mainTopicId){
         $topic = new Topic($id, $title, $countMessages, $author, $creationDatetime);
         return $topic;
        }, $arrayTopics);
+       session_start();
     require("./view/topicsView.php"); 
 }
 function listMessages($topicId){
@@ -50,7 +51,8 @@ function listMessages($topicId){
         $message = new Message($id, $author, $text, $creationDatetime);
         return $message;
        }, $arrayMessages);
-    require("./view/messagesView.php"); 
+       session_start();
+        require("./view/messagesView.php"); 
 }
 function registerUser(User $user){
     echo UserManager::addUser($user);
@@ -66,7 +68,9 @@ function signInUser(User $user){
     }
 }
 function signOffUser(){
-    session_destroy();
+    session_start();
     session_unset();
+    session_destroy();
+    require("./view/deconnexionView.php"); 
 }
 

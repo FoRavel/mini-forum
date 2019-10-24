@@ -17,6 +17,8 @@ if(isset($_GET["action"])){
     } else if($_GET["action"] == "listMessages"){
         $topicId = $_GET["id"];
         listMessages($topicId);
+    } else if($_GET["action"] == "signOff"){
+        signOffUser();
     }
 }else{
     openMainPage();

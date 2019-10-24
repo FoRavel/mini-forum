@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,6 +8,7 @@
         <link rel="stylesheet" href="./public/css/styles.scss">
     </head>
     <body>
+        <?= $header ?>
         <?= $content ?>
     </body>
 </html>
