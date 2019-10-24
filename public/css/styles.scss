@@ -1,5 +1,4 @@
-
-
+$padding: 0.7em 0.7em;
 body{
     font-family: "Roboto", sans-serif;
     width: 1024px;
@@ -10,12 +9,13 @@ body{
     background-color: #004874;
     font-weight: normal;
     text-align: left;
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
+    padding: $padding;
+}
+.table__col{
+    padding: $padding;
 }
 .table__row:nth-child(even){
     background: white;
-    padding: $table-padding;
 }
 .table__row:nth-child(odd){
     background: #fafafa;
@@ -24,9 +24,9 @@ body{
     color: black;
     font-weight: bold;
     text-decoration: none;
-}
-.table__main-topic-title:hover{
-    color: #4588c5;
+    &:hover{
+        color: #4588c5;
+    }
 }
 .table__main-topic-description{
     font-size: 0.9em;
@@ -36,8 +36,4 @@ body{
     display: none;
 }
 
-#mainTopicLink{
 
-}
-
-$table-padding: 0.7em 0.7em;

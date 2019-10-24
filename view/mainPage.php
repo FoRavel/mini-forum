@@ -13,9 +13,9 @@
         </tr>
         <?php foreach ($arrayObjTopics as $topic){?>
         <tr class="table__row">
-            <td><a id="mainTopicLink" class="table__main-topic-title" href="index.php?action=listTopics&id=<?= $topic->getId()?>"><?= $topic->getTitle() ?></a><p class="table__main-topic-description"><?= $topic->getDescription() ?></p></td>
-            <td><?= $topic->getCountTopics() ?></td>
-            <td><?= $topic->getCountMessages() ?></td>
+            <td class="table__col"><a id="mainTopicLink" class="table__main-topic-title" href="index.php?action=listTopics&id=<?= $topic->getId()?>"><?= $topic->getTitle() ?></a><p class="table__main-topic-description"><?= $topic->getDescription() ?></p></td>
+            <td class="table__col"><?= $topic->getCountTopics() ?></td>
+            <td class="table__col"><?= $topic->getCountMessages() ?></td>
         </tr>
         <?php }; ?>
     </table>
