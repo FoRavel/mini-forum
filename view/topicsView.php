@@ -4,19 +4,19 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-    <a href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Créer Nouveau sujet</a>
-    <table>
+<a class="btn btn--margin" href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Commencer une nouvelle discussion</a>
+    <table class="table">
         <tr>
-            <td>Discussions</td>
-            <td>Messages</td>
+            <th class="table__header table__col--padding">Discussions</th>
+            <th class="table__header table__col--padding">Messages</th>
         </tr>
         <?php foreach ($arrayObjTopics as $topic){?>
-        <tr>
-            <td>
-            <a href="index.php?action=listMessages&id=<?=$topic->getId()?>"><?= $topic->getTitle() ?></a>
-            <p>par <?= $topic->getAuthor().", ".$topic->getCreationDatetime() ?></p>
+        <tr class="table__row">
+            <td class="table__col--padding">
+            <a class="table__topic-title" href="index.php?action=listMessages&id=<?=$topic->getId()?>"><?= $topic->getTitle() ?></a>
+            <p class="table__topic-author">par <?= $topic->getAuthor().", ".$topic->getCreationDatetime() ?></p>
             </td>
-            <td><?= $topic->getCountMessages() ?></td>
+            <td class="table__col--padding"><?= $topic->getCountMessages() ?></td>
         </tr>
         <?php }; ?>
     </table>

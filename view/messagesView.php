@@ -7,12 +7,11 @@
 <section>
     <table>
         <?php foreach ($arrayObjMessages as $message){?>
-        <tr>
-            <td>
+        <tr class="table__row">
+            <td class="table__col--padding">
+            <p class="table__message-date-author">Posté le <?= $message->getDate()?> par <span class="table__message-author"><?= $message->getAuthor() ?></span></p>
             <p><?= $message->getText() ?></p>
-            <p>par <?= $message->getAuthor().", ".$message->getDate() ?></p>
             </td>
-
         </tr>
         <?php }; ?>
     </table>

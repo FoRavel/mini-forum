@@ -1,7 +1,65 @@
+flex-column, body, .new-topic-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   width: 1024px;
   margin: 0 auto;
+}
+
+.btn, .btn-input {
+  background-color: #57bbb3;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.btn-input {
+  border: none;
+  margin: 0 auto;
+  font-size: 1.0em;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.new-topic-form__input {
+  border: none;
+  -webkit-box-shadow: inset 0px 0px 3px 0px #00000059;
+          box-shadow: inset 0px 0px 3px 0px #00000059;
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.new-topic-form__input--default {
+  height: 2.8em;
+}
+
+.new-topic-form__input--textarea {
+  height: 20.8em;
+}
+
+.table {
+  border-collapse: collapse;
 }
 
 .table__header {
@@ -9,10 +67,9 @@ body {
   background-color: #004874;
   font-weight: normal;
   text-align: left;
-  padding: 0.7em 0.7em;
 }
 
-.table__col {
+.table__col--padding {
   padding: 0.7em 0.7em;
 }
 
@@ -24,18 +81,31 @@ body {
   background: #fafafa;
 }
 
-.table__main-topic-title {
+.table__topic-title {
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
 
-.table__main-topic-title:hover {
+.table__topic-title:hover {
   color: #4588c5;
 }
 
 .table__main-topic-description {
   font-size: 0.9em;
+}
+
+.table__topic-author {
+  font-size: 0.8em;
+  color: #8d9aa6;
+}
+
+.table__message-author {
+  font-weight: bold;
+}
+
+.table__message-date-author {
+  font-size: 0.8em;
 }
 
 #loginInput, #registerConfirmMessage, #registerConfirmButton, #loginContinueButton, #loginConfirmButton {
