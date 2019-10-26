@@ -8,14 +8,29 @@ flex-column, body, .new-topic-form {
           flex-direction: column;
 }
 
+height-input, .login-register-form__input, .new-topic-form__input--default {
+  height: 2.8em;
+}
+
+form-input, .login-register-form__input, .new-topic-form__input {
+  border: none;
+  -webkit-box-shadow: inset 0px 0px 3px 0px #00000059;
+          box-shadow: inset 0px 0px 3px 0px #00000059;
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   width: 1024px;
   margin: 0 auto;
 }
 
-.btn, .btn-input {
+.btn, .login-register-buttons__btn, .login-register-form__btn {
   background-color: #57bbb3;
+  border: 1px solid #57bbb3;
   color: white;
   text-decoration: none;
   padding: 0.5em 0.5em;
@@ -26,8 +41,38 @@ body {
   width: fit-content;
 }
 
-.btn-input {
-  border: none;
+.btn--input {
+  margin: 0 auto;
+  font-size: 1.0em;
+}
+
+.btn--white {
+  background-color: white;
+  color: #57bbb3;
+}
+
+.login-register-buttons__btn {
+  font-size: 1.0em;
+}
+
+.login-register-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 275px;
+  padding: 1.0em 1.0em;
+  -webkit-box-shadow: 0px 0px 20px 0px #00000059;
+          box-shadow: 0px 0px 20px 0px #00000059;
+  position: absolute;
+  top: 50%;
+  background-color: white;
+}
+
+.login-register-form__btn {
   margin: 0 auto;
   font-size: 1.0em;
 }
@@ -42,20 +87,10 @@ section {
           flex-direction: column;
 }
 
-.new-topic-form__input {
-  border: none;
-  -webkit-box-shadow: inset 0px 0px 3px 0px #00000059;
-          box-shadow: inset 0px 0px 3px 0px #00000059;
-  margin-top: 1.0em;
-  margin-bottom: 1.0em;
-}
-
-.new-topic-form__input--default {
-  height: 2.8em;
-}
-
 .new-topic-form__input--textarea {
   height: 20.8em;
+  padding-top: 1.0em;
+  padding-bottom: 1.0em;
 }
 
 .table {
@@ -108,7 +143,16 @@ section {
   font-size: 0.8em;
 }
 
-#loginInput, #registerConfirmMessage, #registerConfirmButton, #loginContinueButton, #loginConfirmButton {
+.login-register-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.login-register-form, #login-register-form, #loginInput, #registerConfirmMessage, #registerConfirmButton, #loginContinueButton, #loginConfirmButton, #infoMessage {
   display: none;
 }
 /*# sourceMappingURL=styles.css.map */

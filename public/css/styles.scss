@@ -2,14 +2,27 @@ flex-column{
     display: flex;
     flex-direction: column;
 }
+height-input{
+    height: 2.8em;
+}
+form-input{
+    border: none;
+    box-shadow: inset 0px 0px 3px 0px #00000059;
+    margin-top: 1.0em;
+    margin-bottom: 1.0em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
 body{
     font-family: "Roboto", sans-serif;
     width: 1024px;
     margin: 0 auto;
     @extend flex-column;
 }
+
 .btn{
     background-color: #57bbb3;
+    border: 1px solid #57bbb3;
     color: white;
     text-decoration: none;
     padding: 0.5em 0.5em;
@@ -17,12 +30,38 @@ body{
     margin-top: 0.5em;
     width:fit-content;
 }
-.btn-input{
-    @extend .btn;
-    border: none;
+.btn--input{
     margin: 0 auto;
     font-size: 1.0em;
 } 
+.btn--white{
+    background-color:white;
+    color: #57bbb3;
+}
+.login-register-buttons__btn{
+    @extend .btn;
+    font-size: 1.0em;
+}
+.login-register-form{
+    display: flex;
+    flex-direction: column;
+    width: 275px;
+    padding: 1.0em 1.0em;
+    box-shadow: 0px 0px 20px 0px #00000059;
+    position: absolute;
+    top: 50%;
+    background-color: white;    
+}
+.login-register-form__btn{
+    @extend .btn;
+    margin: 0 auto;
+    font-size: 1.0em;
+}
+
+.login-register-form__input{
+    @extend height-input;
+    @extend form-input;
+}
 
 section{
     display: flex;
@@ -32,19 +71,19 @@ section{
     @extend flex-column;
 }
 .new-topic-form__input{  
-    border: none;
-    box-shadow: inset 0px 0px 3px 0px #00000059;
-    margin-top: 1.0em;
-    margin-bottom: 1.0em;
+    @extend form-input;
 }
 .new-topic-form__input--default{
-    height: 2.8em;
+    @extend height-input;
 }
 .new-topic-form__input--textarea{
     height: 20.8em;
+    padding-top: 1.0em;
+    padding-bottom: 1.0em;
 }
 .table{
     border-collapse: collapse;
+ 
 }
 .table__header{
     color: white;
@@ -82,9 +121,12 @@ section{
 .table__message-date-author{
     font-size: 0.8em;
 }
+.login-register-buttons{
+    display: flex;
+    justify-content:flex-end;
+}
 
-
-#loginInput, #registerConfirmMessage,#registerConfirmButton, #loginContinueButton, #loginConfirmButton{
+.login-register-form, #login-register-form, #loginInput, #registerConfirmMessage,#registerConfirmButton, #loginContinueButton, #loginConfirmButton, #infoMessage{
     display: none;
 }
 

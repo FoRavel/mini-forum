@@ -4,7 +4,7 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-<a class="btn btn--margin" href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Commencer une nouvelle discussion</a>
+<a class="btn" href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Commencer une nouvelle discussion</a>
     <table class="table">
         <tr>
             <th class="table__header table__col--padding">Discussions</th>
