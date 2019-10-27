@@ -6,14 +6,21 @@ class Message{
     private $text;
     private $date;
     
-
     public function __construct($i, $a, $t, $d){
         $this->messageId = $i;
         $this->author = $a;
         $this->text = $t;      
         $this->date = $d;
     }
-    
+    public function setText($t){
+        $this->text;
+    }
+    public function setDate($t){
+        $this->date;
+    }
+    public function setAuthor(){
+        $this->author;
+    }
     public function getMessageId(){
         return $this->messageId;
     }

@@ -8,7 +8,13 @@ $(document).ready(function () {
     });
     $("#loginButton").click(function () {
         $(".instruction-message").text("Nom d'utilisateur:");
-
+        $("#loginInput").css("display", "initial");
+        $("#registerConfirmButton").css("display", "none");
+        $("#loginConfirmButton").css("display", "initial");
+        $(".login-register-form").css("display", "flex");
+    });
+    $("#createNewTopicButton").click(function () {
+        $(".instruction-message").text("Nom d'utilisateur:");
         $("#loginInput").css("display", "initial");
         $("#registerConfirmButton").css("display", "none");
         $("#loginConfirmButton").css("display", "initial");

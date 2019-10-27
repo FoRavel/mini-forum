@@ -20,10 +20,26 @@ if(isset($_GET["action"])){
     } else if($_GET["action"] == "signOff"){
         signOffUser();
     } else if($_GET["action"] == "createTopic"){
+        session_start();
         $mainTopicId = $_GET["id"];
-        createTopic();
+        if(isset($_SESSION["username"])){
+            createTopic();
+        }else{
+            header("location: index.php?action=listTopics&id=$mainTopicId");
+        }
     } else if($_GET["action"] == "createTopic_trt"){
-        createTopic_trt();
+        session_start();
+        $topicId = $_GET["id"];
+        $username = $_SESSION["username"];
+        $currentTimestamp = time();
+        $text = $_POST["text"];
+        $params = array(
+            "id"=>$topicId,
+            "username"=>$username,
+            "timestam"=>$currentTimestamp,
+            "text"=>$text
+        );
+        createTopic_trt($params);
     }
 }else{
     openMainPage();

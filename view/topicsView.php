@@ -4,7 +4,11 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-<a class="btn" href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Commencer une nouvelle discussion</a>
+<?php if(isset($_SESSION["username"])){ ?>
+    <a class="btn" href="./index.php?action=createTopic&id=<?= $mainTopicId ?>">Commencer une nouvelle discussion</a>
+<?php } else{ ?>
+    <a id="createNewTopicButton" class="btn" href="#">Commencer une nouvelle discussion</a>
+<?php } ?>
     <table class="table">
         <tr>
             <th class="table__header table__col--padding">Discussions</th>

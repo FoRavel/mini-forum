@@ -59,6 +59,22 @@ class TopicManager{
         return $results;
     }
 
+    public static function addMessage($params){
+        $text = $params["text"];
+        $timestamp = $params["timestamp"];
+        $topicId = $params["id"];
+        $username = $params["username"];
+        $db = self::_connectDb();
+        $sql = "INSERT INTO message(text, datetime, id_topic, username) VALUES(:text,:datetime,:topicId,:username)";
+        $sth = $db->prepare($sql);
+        $sth->execute(array(
+            ":text" => $text,
+            ":datetime" => $timestamp,
+            ":topicId" => $topicId,
+            ":username" => $username
+        ));
+    }
+
     private function _connectDb(){
         $db = new PDO('mysql:host=localhost;dbname=miniforum;charset=utf8', 'root', '');
         return $db;

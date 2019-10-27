@@ -76,7 +76,7 @@ function signOffUser(){
 function createTopic(){
     require("./view/createTopicView.php"); 
 }
-function createTopic_trt(){
-
+function createTopic_trt($params){
+    TopicManager::addMessage($params);
 }
 
