@@ -33,11 +33,13 @@ if(isset($_GET["action"])){
         $username = $_SESSION["username"];
         $currentTimestamp = time();
         $text = $_POST["text"];
+        $title = $_POST["title"];
         $params = array(
             "id"=>$topicId,
             "username"=>$username,
-            "timestam"=>$currentTimestamp,
-            "text"=>$text
+            "timestamp"=>$currentTimestamp,
+            "text"=>$text,
+            "title"=>$title
         );
         createTopic_trt($params);
     }

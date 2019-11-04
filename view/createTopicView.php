@@ -4,11 +4,11 @@
 <?php $header = ob_get_clean();?>
 <?php ob_start();?>
 <section>
-    <form class="new-topic-form"method="POST" action="./index.php?action=createTopic_trt&id=<?= $_GET["id"] ?>">
+    <form class="new-topic-form" method="POST" action="./index.php?action=createTopic_trt&id=<?= $_GET['id'] ?>">
         <label>Titre</label>
         <input class="new-topic-form__input new-topic-form__input--default" type="text" name="title" required/>
         <textarea class="new-topic-form__input new-topic-form__input--textarea " name="text" required></textarea>
-        <input class ="btn btn--input" type="button" name="post" value="Créer la nouvelle discussion"/>
+        <input class="btn btn--input" type="submit" name="post" value="Créer la nouvelle discussion"/>
     </form>
 </section>
 

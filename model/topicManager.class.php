@@ -5,7 +5,7 @@ class TopicManager{
     public static function getMainTopics(){
         $db = self::_connectDb();
         $results = array();
-        $sql = "SELECT id,  title, description FROM main_topic";
+        $sql = "SELECT id, title, description FROM main_topic";
         $sth = $db->prepare($sql);
         $sth->execute();
         $results = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -59,10 +59,10 @@ class TopicManager{
         return $results;
     }
 
-    public static function addMessage($params){
+    public static function addMessage($params, $id){
         $text = $params["text"];
         $timestamp = $params["timestamp"];
-        $topicId = $params["id"];
+        $topicId = $id;
         $username = $params["username"];
         $db = self::_connectDb();
         $sql = "INSERT INTO message(text, datetime, id_topic, username) VALUES(:text,:datetime,:topicId,:username)";
@@ -73,6 +73,22 @@ class TopicManager{
             ":topicId" => $topicId,
             ":username" => $username
         ));
+    }
+    public static function addTopic($params){
+        $timestamp = $params["timestamp"];
+        $topicId = $params["id"];
+        $username = $params["username"];
+        $title = $params["title"];
+        $db = self::_connectDb();
+        $sql = "INSERT INTO topic(title_topic, datetime_topic, username, id) VALUES(:title,:dt,:username, :mainTopicId)";
+        $sth = $db->prepare($sql);
+        $sth->execute(array(
+            ":title" => $title,
+            ":dt" => $timestamp,
+            ":mainTopicId" => $topicId,
+            ":username" => $username
+        ));
+        return $db->lastInsertId();
     }
 
     private function _connectDb(){

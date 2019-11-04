@@ -77,6 +77,8 @@ function createTopic(){
     require("./view/createTopicView.php"); 
 }
 function createTopic_trt($params){
-    TopicManager::addMessage($params);
+    $id = TopicManager::addTopic($params);
+    TopicManager::addMessage($params, $id);
+
 }
 
